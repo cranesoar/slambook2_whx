@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/cranesoar/SLAM/slambook2_whx/ch2/build",
+  "command": "/usr/bin/g++-7  -Dhello_shared_EXPORTS  -g -fPIC   -o CMakeFiles/hello_shared.dir/libHelloSLAM.cpp.o -c /home/cranesoar/SLAM/slambook2_whx/ch2/libHelloSLAM.cpp",
+  "file": "/home/cranesoar/SLAM/slambook2_whx/ch2/libHelloSLAM.cpp"
+},
+{
+  "directory": "/home/cranesoar/SLAM/slambook2_whx/ch2/build",
+  "command": "/usr/bin/g++-7    -g   -o CMakeFiles/hello.dir/libHelloSLAM.cpp.o -c /home/cranesoar/SLAM/slambook2_whx/ch2/libHelloSLAM.cpp",
+  "file": "/home/cranesoar/SLAM/slambook2_whx/ch2/libHelloSLAM.cpp"
+},
+{
+  "directory": "/home/cranesoar/SLAM/slambook2_whx/ch2/build",
+  "command": "/usr/bin/g++-7    -g   -o CMakeFiles/helloSLAM.dir/helloSLAM.cpp.o -c /home/cranesoar/SLAM/slambook2_whx/ch2/helloSLAM.cpp",
+  "file": "/home/cranesoar/SLAM/slambook2_whx/ch2/helloSLAM.cpp"
+},
+{
+  "directory": "/home/cranesoar/SLAM/slambook2_whx/ch2/build",
+  "command": "/usr/bin/g++-7    -g   -o CMakeFiles/useHello.dir/useHello.cpp.o -c /home/cranesoar/SLAM/slambook2_whx/ch2/useHello.cpp",
+  "file": "/home/cranesoar/SLAM/slambook2_whx/ch2/useHello.cpp"
+}
+]
