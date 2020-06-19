@@ -42,4 +42,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/hello_shared.dir/DependInfo.cmake"
+  "CMakeFiles/hello.dir/DependInfo.cmake"
+  "CMakeFiles/helloSLAM.dir/DependInfo.cmake"
+  "CMakeFiles/useHello.dir/DependInfo.cmake"
   )
