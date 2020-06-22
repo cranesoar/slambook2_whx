@@ -73,6 +73,12 @@ int main( int argc, char **argv)
     cout << "x = " << x.transpose() << endl;
 
     timer_stt = clock();
+    x = matrix_NN.colPivHouseholderQr().solve(v_Nd);
+    cout << "time of Qr decomposition is "
+         << 1000 * (clock() - timer_stt) / (double) CLOCKS_PER_SEC << "ms" << endl;
+    cout << "x = " << x.transpose() << endl;
+
+    timer_stt = clock();
     x = matrix_NN.ldlt().solve(v_Nd);
     cout << "time of ldlt decompostion is "
          << 1000 * (clock() - timer_stt) / (double) CLOCKS_PER_SEC << "ms" << endl;
