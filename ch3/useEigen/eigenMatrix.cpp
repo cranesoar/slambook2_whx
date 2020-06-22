@@ -56,8 +56,28 @@ int main( int argc, char **argv)
     cout << "inverse: \n" << matrix_33.inverse() << endl;    //逆
     cout << "det: " << matrix_33.determinant() << endl; // 行列式
 
+    SelfAdjointEigenSolver<Matrix3d> eigen_solver(matrix_33.transpose() * matrix_33);
+    cout << "Eigen values = \n" << eigen_solver.eigenvalues() << endl;
+    cout << "Eigen vectors = \n" << eigen_solver.eigenvectors() << endl;
 
-    cout << "dsfjwioerj" << endl;
+    Matrix<double, MATRIX_SIZE, MATRIX_SIZE> matrix_NN 
+        = MatrixXd::Random(MATRIX_SIZE, MATRIX_SIZE);
+    matrix_NN = matrix_NN * matrix_NN.transpose();
+    Matrix<double, MATRIX_SIZE, 1> v_Nd = MatrixXd::Random(MATRIX_SIZE, 1);
+
+    clock_t timer_stt = clock();
+
+    Matrix<double, MATRIX_SIZE, 1> x = matrix_NN.inverse() * v_Nd;
+    cout << "time of normal inverse is "
+         << 1000 * (clock() - timer_stt) / (double) CLOCKS_PER_SEC << "ms" << endl;
+    cout << "x = " << x.transpose() << endl;
+
+    timer_stt = clock();
+    x = matrix_NN.ldlt().solve(v_Nd);
+    cout << "time of ldlt decompostion is "
+         << 1000 * (clock() - timer_stt) / (double) CLOCKS_PER_SEC << "ms" << endl;
+    cout << "x = " << x.transpose() << endl;          
+
     return 0;
 }
 
