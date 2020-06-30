@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/cranesoar/SLAM/slambook2_whx/ch3/useGeometry/build
 CMakeFiles/eigenGeometry.dir/all:
 	$(MAKE) -f CMakeFiles/eigenGeometry.dir/build.make CMakeFiles/eigenGeometry.dir/depend
 	$(MAKE) -f CMakeFiles/eigenGeometry.dir/build.make CMakeFiles/eigenGeometry.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cranesoar/SLAM/slambook2_whx/ch3/useGeometry/build/CMakeFiles --progress-num= "Built target eigenGeometry"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cranesoar/SLAM/slambook2_whx/ch3/useGeometry/build/CMakeFiles --progress-num=1,2 "Built target eigenGeometry"
 .PHONY : CMakeFiles/eigenGeometry.dir/all
 
 # Include target in all.
@@ -76,7 +76,7 @@ all: CMakeFiles/eigenGeometry.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/eigenGeometry.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cranesoar/SLAM/slambook2_whx/ch3/useGeometry/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cranesoar/SLAM/slambook2_whx/ch3/useGeometry/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/eigenGeometry.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/cranesoar/SLAM/slambook2_whx/ch3/useGeometry/build/CMakeFiles 0
 .PHONY : CMakeFiles/eigenGeometry.dir/rule

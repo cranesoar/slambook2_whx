@@ -123,6 +123,33 @@ eigenGeometry/fast:
 	$(MAKE) -f CMakeFiles/eigenGeometry.dir/build.make CMakeFiles/eigenGeometry.dir/build
 .PHONY : eigenGeometry/fast
 
+eigenGeometry.o: eigenGeometry.cpp.o
+
+.PHONY : eigenGeometry.o
+
+# target to build an object file
+eigenGeometry.cpp.o:
+	$(MAKE) -f CMakeFiles/eigenGeometry.dir/build.make CMakeFiles/eigenGeometry.dir/eigenGeometry.cpp.o
+.PHONY : eigenGeometry.cpp.o
+
+eigenGeometry.i: eigenGeometry.cpp.i
+
+.PHONY : eigenGeometry.i
+
+# target to preprocess a source file
+eigenGeometry.cpp.i:
+	$(MAKE) -f CMakeFiles/eigenGeometry.dir/build.make CMakeFiles/eigenGeometry.dir/eigenGeometry.cpp.i
+.PHONY : eigenGeometry.cpp.i
+
+eigenGeometry.s: eigenGeometry.cpp.s
+
+.PHONY : eigenGeometry.s
+
+# target to generate assembly for a file
+eigenGeometry.cpp.s:
+	$(MAKE) -f CMakeFiles/eigenGeometry.dir/build.make CMakeFiles/eigenGeometry.dir/eigenGeometry.cpp.s
+.PHONY : eigenGeometry.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -132,6 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... eigenGeometry"
 	@echo "... edit_cache"
+	@echo "... eigenGeometry.o"
+	@echo "... eigenGeometry.i"
+	@echo "... eigenGeometry.s"
 .PHONY : help
 
 
