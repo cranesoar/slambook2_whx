@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/cranesoar/SLAM/slambook2_whx/ch3/examples/build",
+  "command": "/usr/bin/g++-7   -I/usr/include/eigen3  -g   -o CMakeFiles/coordinateTransform.dir/coordinateTransform.cpp.o -c /home/cranesoar/SLAM/slambook2_whx/ch3/examples/coordinateTransform.cpp",
+  "file": "/home/cranesoar/SLAM/slambook2_whx/ch3/examples/coordinateTransform.cpp"
+}
+]
