@@ -170,15 +170,72 @@ clean: useGeometry/CMakeFiles/eigenGeometry.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory visualizeGeometry
+
+# Convenience name for "all" pass in the directory.
+visualizeGeometry/all: visualizeGeometry/CMakeFiles/visualizeGeometry.dir/all
+
+.PHONY : visualizeGeometry/all
+
+# Convenience name for "clean" pass in the directory.
+visualizeGeometry/clean: visualizeGeometry/CMakeFiles/visualizeGeometry.dir/clean
+
+.PHONY : visualizeGeometry/clean
+
+# Convenience name for "preinstall" pass in the directory.
+visualizeGeometry/preinstall:
+
+.PHONY : visualizeGeometry/preinstall
+
+#=============================================================================
+# Target rules for target visualizeGeometry/CMakeFiles/visualizeGeometry.dir
+
+# All Build rule for target.
+visualizeGeometry/CMakeFiles/visualizeGeometry.dir/all:
+	$(MAKE) -f visualizeGeometry/CMakeFiles/visualizeGeometry.dir/build.make visualizeGeometry/CMakeFiles/visualizeGeometry.dir/depend
+	$(MAKE) -f visualizeGeometry/CMakeFiles/visualizeGeometry.dir/build.make visualizeGeometry/CMakeFiles/visualizeGeometry.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cranesoar/SLAM/slambook2_whx/ch3/build/CMakeFiles --progress-num=9,10 "Built target visualizeGeometry"
+.PHONY : visualizeGeometry/CMakeFiles/visualizeGeometry.dir/all
+
+# Include target in all.
+all: visualizeGeometry/CMakeFiles/visualizeGeometry.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+visualizeGeometry/CMakeFiles/visualizeGeometry.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cranesoar/SLAM/slambook2_whx/ch3/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 visualizeGeometry/CMakeFiles/visualizeGeometry.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cranesoar/SLAM/slambook2_whx/ch3/build/CMakeFiles 0
+.PHONY : visualizeGeometry/CMakeFiles/visualizeGeometry.dir/rule
+
+# Convenience name for target.
+visualizeGeometry: visualizeGeometry/CMakeFiles/visualizeGeometry.dir/rule
+
+.PHONY : visualizeGeometry
+
+# clean rule for target.
+visualizeGeometry/CMakeFiles/visualizeGeometry.dir/clean:
+	$(MAKE) -f visualizeGeometry/CMakeFiles/visualizeGeometry.dir/build.make visualizeGeometry/CMakeFiles/visualizeGeometry.dir/clean
+.PHONY : visualizeGeometry/CMakeFiles/visualizeGeometry.dir/clean
+
+# clean rule for target.
+clean: visualizeGeometry/CMakeFiles/visualizeGeometry.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Directory level rules for directory examples
 
 # Convenience name for "all" pass in the directory.
 examples/all: examples/CMakeFiles/coordinateTransform.dir/all
+examples/all: examples/CMakeFiles/plotTrajectory.dir/all
 
 .PHONY : examples/all
 
 # Convenience name for "clean" pass in the directory.
 examples/clean: examples/CMakeFiles/coordinateTransform.dir/clean
+examples/clean: examples/CMakeFiles/plotTrajectory.dir/clean
 
 .PHONY : examples/clean
 
@@ -221,6 +278,43 @@ examples/CMakeFiles/coordinateTransform.dir/clean:
 
 # clean rule for target.
 clean: examples/CMakeFiles/coordinateTransform.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target examples/CMakeFiles/plotTrajectory.dir
+
+# All Build rule for target.
+examples/CMakeFiles/plotTrajectory.dir/all:
+	$(MAKE) -f examples/CMakeFiles/plotTrajectory.dir/build.make examples/CMakeFiles/plotTrajectory.dir/depend
+	$(MAKE) -f examples/CMakeFiles/plotTrajectory.dir/build.make examples/CMakeFiles/plotTrajectory.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cranesoar/SLAM/slambook2_whx/ch3/build/CMakeFiles --progress-num=7,8 "Built target plotTrajectory"
+.PHONY : examples/CMakeFiles/plotTrajectory.dir/all
+
+# Include target in all.
+all: examples/CMakeFiles/plotTrajectory.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+examples/CMakeFiles/plotTrajectory.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cranesoar/SLAM/slambook2_whx/ch3/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/plotTrajectory.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cranesoar/SLAM/slambook2_whx/ch3/build/CMakeFiles 0
+.PHONY : examples/CMakeFiles/plotTrajectory.dir/rule
+
+# Convenience name for target.
+plotTrajectory: examples/CMakeFiles/plotTrajectory.dir/rule
+
+.PHONY : plotTrajectory
+
+# clean rule for target.
+examples/CMakeFiles/plotTrajectory.dir/clean:
+	$(MAKE) -f examples/CMakeFiles/plotTrajectory.dir/build.make examples/CMakeFiles/plotTrajectory.dir/clean
+.PHONY : examples/CMakeFiles/plotTrajectory.dir/clean
+
+# clean rule for target.
+clean: examples/CMakeFiles/plotTrajectory.dir/clean
 
 .PHONY : clean
 

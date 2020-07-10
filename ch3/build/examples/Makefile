@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = /home/cranesoar/SLAM/slambook2_whx/ch3/build
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
-	@echo "Running CMake to regenerate build system..."
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
 	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
@@ -69,7 +69,7 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@echo "No interactive CMake dialog available..."
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
 	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
@@ -125,6 +125,21 @@ coordinateTransform/fast:
 	cd /home/cranesoar/SLAM/slambook2_whx/ch3/build && $(MAKE) -f examples/CMakeFiles/coordinateTransform.dir/build.make examples/CMakeFiles/coordinateTransform.dir/build
 .PHONY : coordinateTransform/fast
 
+# Convenience name for target.
+examples/CMakeFiles/plotTrajectory.dir/rule:
+	cd /home/cranesoar/SLAM/slambook2_whx/ch3/build && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/plotTrajectory.dir/rule
+.PHONY : examples/CMakeFiles/plotTrajectory.dir/rule
+
+# Convenience name for target.
+plotTrajectory: examples/CMakeFiles/plotTrajectory.dir/rule
+
+.PHONY : plotTrajectory
+
+# fast build rule for target.
+plotTrajectory/fast:
+	cd /home/cranesoar/SLAM/slambook2_whx/ch3/build && $(MAKE) -f examples/CMakeFiles/plotTrajectory.dir/build.make examples/CMakeFiles/plotTrajectory.dir/build
+.PHONY : plotTrajectory/fast
+
 coordinateTransform.o: coordinateTransform.cpp.o
 
 .PHONY : coordinateTransform.o
@@ -152,6 +167,33 @@ coordinateTransform.cpp.s:
 	cd /home/cranesoar/SLAM/slambook2_whx/ch3/build && $(MAKE) -f examples/CMakeFiles/coordinateTransform.dir/build.make examples/CMakeFiles/coordinateTransform.dir/coordinateTransform.cpp.s
 .PHONY : coordinateTransform.cpp.s
 
+plotTrajectory.o: plotTrajectory.cpp.o
+
+.PHONY : plotTrajectory.o
+
+# target to build an object file
+plotTrajectory.cpp.o:
+	cd /home/cranesoar/SLAM/slambook2_whx/ch3/build && $(MAKE) -f examples/CMakeFiles/plotTrajectory.dir/build.make examples/CMakeFiles/plotTrajectory.dir/plotTrajectory.cpp.o
+.PHONY : plotTrajectory.cpp.o
+
+plotTrajectory.i: plotTrajectory.cpp.i
+
+.PHONY : plotTrajectory.i
+
+# target to preprocess a source file
+plotTrajectory.cpp.i:
+	cd /home/cranesoar/SLAM/slambook2_whx/ch3/build && $(MAKE) -f examples/CMakeFiles/plotTrajectory.dir/build.make examples/CMakeFiles/plotTrajectory.dir/plotTrajectory.cpp.i
+.PHONY : plotTrajectory.cpp.i
+
+plotTrajectory.s: plotTrajectory.cpp.s
+
+.PHONY : plotTrajectory.s
+
+# target to generate assembly for a file
+plotTrajectory.cpp.s:
+	cd /home/cranesoar/SLAM/slambook2_whx/ch3/build && $(MAKE) -f examples/CMakeFiles/plotTrajectory.dir/build.make examples/CMakeFiles/plotTrajectory.dir/plotTrajectory.cpp.s
+.PHONY : plotTrajectory.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -159,11 +201,15 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... coordinateTransform"
 	@echo "... edit_cache"
+	@echo "... coordinateTransform"
+	@echo "... plotTrajectory"
 	@echo "... coordinateTransform.o"
 	@echo "... coordinateTransform.i"
 	@echo "... coordinateTransform.s"
+	@echo "... plotTrajectory.o"
+	@echo "... plotTrajectory.i"
+	@echo "... plotTrajectory.s"
 .PHONY : help
 
 

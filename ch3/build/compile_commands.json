@@ -1,0 +1,27 @@
+[
+{
+  "directory": "/home/cranesoar/SLAM/slambook2_whx/ch3/build/useEigen",
+  "command": "/usr/bin/g++-7   -I/usr/include/eigen3  -std=c++11 -g   -o CMakeFiles/eigenMatrix.dir/eigenMatrix.cpp.o -c /home/cranesoar/SLAM/slambook2_whx/ch3/useEigen/eigenMatrix.cpp",
+  "file": "/home/cranesoar/SLAM/slambook2_whx/ch3/useEigen/eigenMatrix.cpp"
+},
+{
+  "directory": "/home/cranesoar/SLAM/slambook2_whx/ch3/build/useGeometry",
+  "command": "/usr/bin/g++-7   -I/usr/include/eigen3  -std=c++11 -g   -o CMakeFiles/eigenGeometry.dir/eigenGeometry.cpp.o -c /home/cranesoar/SLAM/slambook2_whx/ch3/useGeometry/eigenGeometry.cpp",
+  "file": "/home/cranesoar/SLAM/slambook2_whx/ch3/useGeometry/eigenGeometry.cpp"
+},
+{
+  "directory": "/home/cranesoar/SLAM/slambook2_whx/ch3/build/visualizeGeometry",
+  "command": "/usr/bin/g++-7   -isystem /usr/include/eigen3 -I/usr/local/lib/cmake/Pangolin/../../../include -isystem /usr/local/include  -std=c++11 -g   -o CMakeFiles/visualizeGeometry.dir/visualizeGeometry.cpp.o -c /home/cranesoar/SLAM/slambook2_whx/ch3/visualizeGeometry/visualizeGeometry.cpp",
+  "file": "/home/cranesoar/SLAM/slambook2_whx/ch3/visualizeGeometry/visualizeGeometry.cpp"
+},
+{
+  "directory": "/home/cranesoar/SLAM/slambook2_whx/ch3/build/examples",
+  "command": "/usr/bin/g++-7   -I/usr/include/eigen3 -I/usr/local/lib/cmake/Pangolin/../../../include  -std=c++11 -g   -o CMakeFiles/coordinateTransform.dir/coordinateTransform.cpp.o -c /home/cranesoar/SLAM/slambook2_whx/ch3/examples/coordinateTransform.cpp",
+  "file": "/home/cranesoar/SLAM/slambook2_whx/ch3/examples/coordinateTransform.cpp"
+},
+{
+  "directory": "/home/cranesoar/SLAM/slambook2_whx/ch3/build/examples",
+  "command": "/usr/bin/g++-7   -isystem /usr/include/eigen3 -I/usr/local/lib/cmake/Pangolin/../../../include -isystem /usr/local/include  -std=c++11 -g   -o CMakeFiles/plotTrajectory.dir/plotTrajectory.cpp.o -c /home/cranesoar/SLAM/slambook2_whx/ch3/examples/plotTrajectory.cpp",
+  "file": "/home/cranesoar/SLAM/slambook2_whx/ch3/examples/plotTrajectory.cpp"
+}
+]

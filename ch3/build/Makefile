@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = /home/cranesoar/SLAM/slambook2_whx/ch3/build
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
-	@echo "Running CMake to regenerate build system..."
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
 	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
@@ -69,7 +69,7 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@echo "No interactive CMake dialog available..."
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
 	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
@@ -137,6 +137,19 @@ eigenGeometry/fast:
 .PHONY : eigenGeometry/fast
 
 #=============================================================================
+# Target rules for targets named visualizeGeometry
+
+# Build rule for target.
+visualizeGeometry: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 visualizeGeometry
+.PHONY : visualizeGeometry
+
+# fast build rule for target.
+visualizeGeometry/fast:
+	$(MAKE) -f visualizeGeometry/CMakeFiles/visualizeGeometry.dir/build.make visualizeGeometry/CMakeFiles/visualizeGeometry.dir/build
+.PHONY : visualizeGeometry/fast
+
+#=============================================================================
 # Target rules for targets named coordinateTransform
 
 # Build rule for target.
@@ -149,6 +162,19 @@ coordinateTransform/fast:
 	$(MAKE) -f examples/CMakeFiles/coordinateTransform.dir/build.make examples/CMakeFiles/coordinateTransform.dir/build
 .PHONY : coordinateTransform/fast
 
+#=============================================================================
+# Target rules for targets named plotTrajectory
+
+# Build rule for target.
+plotTrajectory: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 plotTrajectory
+.PHONY : plotTrajectory
+
+# fast build rule for target.
+plotTrajectory/fast:
+	$(MAKE) -f examples/CMakeFiles/plotTrajectory.dir/build.make examples/CMakeFiles/plotTrajectory.dir/build
+.PHONY : plotTrajectory/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -159,7 +185,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... eigenMatrix"
 	@echo "... eigenGeometry"
+	@echo "... visualizeGeometry"
 	@echo "... coordinateTransform"
+	@echo "... plotTrajectory"
 .PHONY : help
 
 
