@@ -48,17 +48,17 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cranesoar/SLAM/slambook2_whx/ch3/examples
+CMAKE_SOURCE_DIR = /home/cranesoar/SLAM/slambook2_whx/ch3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cranesoar/SLAM/slambook2_whx/ch3/examples/build
+CMAKE_BINARY_DIR = /home/cranesoar/SLAM/slambook2_whx/ch3/build
 
 #=============================================================================
 # Targets provided globally by CMake.
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	@echo "Running CMake to regenerate build system..."
 	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
@@ -69,7 +69,7 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	@echo "No interactive CMake dialog available..."
 	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cranesoar/SLAM/slambook2_whx/ch3/examples/build/CMakeFiles /home/cranesoar/SLAM/slambook2_whx/ch3/examples/build/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cranesoar/SLAM/slambook2_whx/ch3/examples/build/CMakeFiles 0
+	cd /home/cranesoar/SLAM/slambook2_whx/ch3/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/cranesoar/SLAM/slambook2_whx/ch3/build/CMakeFiles /home/cranesoar/SLAM/slambook2_whx/ch3/build/examples/CMakeFiles/progress.marks
+	cd /home/cranesoar/SLAM/slambook2_whx/ch3/build && $(MAKE) -f CMakeFiles/Makefile2 examples/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cranesoar/SLAM/slambook2_whx/ch3/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /home/cranesoar/SLAM/slambook2_whx/ch3/build && $(MAKE) -f CMakeFiles/Makefile2 examples/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,44 +97,33 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/cranesoar/SLAM/slambook2_whx/ch3/build && $(MAKE) -f CMakeFiles/Makefile2 examples/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/cranesoar/SLAM/slambook2_whx/ch3/build && $(MAKE) -f CMakeFiles/Makefile2 examples/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cranesoar/SLAM/slambook2_whx/ch3/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named coordinateTransform
+# Convenience name for target.
+examples/CMakeFiles/coordinateTransform.dir/rule:
+	cd /home/cranesoar/SLAM/slambook2_whx/ch3/build && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/coordinateTransform.dir/rule
+.PHONY : examples/CMakeFiles/coordinateTransform.dir/rule
 
-# Build rule for target.
-coordinateTransform: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 coordinateTransform
+# Convenience name for target.
+coordinateTransform: examples/CMakeFiles/coordinateTransform.dir/rule
+
 .PHONY : coordinateTransform
 
 # fast build rule for target.
 coordinateTransform/fast:
-	$(MAKE) -f CMakeFiles/coordinateTransform.dir/build.make CMakeFiles/coordinateTransform.dir/build
+	cd /home/cranesoar/SLAM/slambook2_whx/ch3/build && $(MAKE) -f examples/CMakeFiles/coordinateTransform.dir/build.make examples/CMakeFiles/coordinateTransform.dir/build
 .PHONY : coordinateTransform/fast
-
-#=============================================================================
-# Target rules for targets named plotTrajectory
-
-# Build rule for target.
-plotTrajectory: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 plotTrajectory
-.PHONY : plotTrajectory
-
-# fast build rule for target.
-plotTrajectory/fast:
-	$(MAKE) -f CMakeFiles/plotTrajectory.dir/build.make CMakeFiles/plotTrajectory.dir/build
-.PHONY : plotTrajectory/fast
 
 coordinateTransform.o: coordinateTransform.cpp.o
 
@@ -142,7 +131,7 @@ coordinateTransform.o: coordinateTransform.cpp.o
 
 # target to build an object file
 coordinateTransform.cpp.o:
-	$(MAKE) -f CMakeFiles/coordinateTransform.dir/build.make CMakeFiles/coordinateTransform.dir/coordinateTransform.cpp.o
+	cd /home/cranesoar/SLAM/slambook2_whx/ch3/build && $(MAKE) -f examples/CMakeFiles/coordinateTransform.dir/build.make examples/CMakeFiles/coordinateTransform.dir/coordinateTransform.cpp.o
 .PHONY : coordinateTransform.cpp.o
 
 coordinateTransform.i: coordinateTransform.cpp.i
@@ -151,7 +140,7 @@ coordinateTransform.i: coordinateTransform.cpp.i
 
 # target to preprocess a source file
 coordinateTransform.cpp.i:
-	$(MAKE) -f CMakeFiles/coordinateTransform.dir/build.make CMakeFiles/coordinateTransform.dir/coordinateTransform.cpp.i
+	cd /home/cranesoar/SLAM/slambook2_whx/ch3/build && $(MAKE) -f examples/CMakeFiles/coordinateTransform.dir/build.make examples/CMakeFiles/coordinateTransform.dir/coordinateTransform.cpp.i
 .PHONY : coordinateTransform.cpp.i
 
 coordinateTransform.s: coordinateTransform.cpp.s
@@ -160,35 +149,8 @@ coordinateTransform.s: coordinateTransform.cpp.s
 
 # target to generate assembly for a file
 coordinateTransform.cpp.s:
-	$(MAKE) -f CMakeFiles/coordinateTransform.dir/build.make CMakeFiles/coordinateTransform.dir/coordinateTransform.cpp.s
+	cd /home/cranesoar/SLAM/slambook2_whx/ch3/build && $(MAKE) -f examples/CMakeFiles/coordinateTransform.dir/build.make examples/CMakeFiles/coordinateTransform.dir/coordinateTransform.cpp.s
 .PHONY : coordinateTransform.cpp.s
-
-plotTrajectory.o: plotTrajectory.cpp.o
-
-.PHONY : plotTrajectory.o
-
-# target to build an object file
-plotTrajectory.cpp.o:
-	$(MAKE) -f CMakeFiles/plotTrajectory.dir/build.make CMakeFiles/plotTrajectory.dir/plotTrajectory.cpp.o
-.PHONY : plotTrajectory.cpp.o
-
-plotTrajectory.i: plotTrajectory.cpp.i
-
-.PHONY : plotTrajectory.i
-
-# target to preprocess a source file
-plotTrajectory.cpp.i:
-	$(MAKE) -f CMakeFiles/plotTrajectory.dir/build.make CMakeFiles/plotTrajectory.dir/plotTrajectory.cpp.i
-.PHONY : plotTrajectory.cpp.i
-
-plotTrajectory.s: plotTrajectory.cpp.s
-
-.PHONY : plotTrajectory.s
-
-# target to generate assembly for a file
-plotTrajectory.cpp.s:
-	$(MAKE) -f CMakeFiles/plotTrajectory.dir/build.make CMakeFiles/plotTrajectory.dir/plotTrajectory.cpp.s
-.PHONY : plotTrajectory.cpp.s
 
 # Help Target
 help:
@@ -197,15 +159,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
 	@echo "... coordinateTransform"
-	@echo "... plotTrajectory"
+	@echo "... edit_cache"
 	@echo "... coordinateTransform.o"
 	@echo "... coordinateTransform.i"
 	@echo "... coordinateTransform.s"
-	@echo "... plotTrajectory.o"
-	@echo "... plotTrajectory.i"
-	@echo "... plotTrajectory.s"
 .PHONY : help
 
 
@@ -217,6 +175,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cranesoar/SLAM/slambook2_whx/ch3/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

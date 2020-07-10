@@ -6,5 +6,5 @@ CXX_FLAGS = -g
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/include/eigen3 -I/usr/local/lib/cmake/Pangolin/../../../include 
+CXX_INCLUDES = -isystem /usr/include/eigen3 -I/usr/local/lib/cmake/Pangolin/../../../include -isystem /usr/local/include 
 

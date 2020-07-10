@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/cranesoar/SLAM/slambook2_whx/ch3/examples/coordinateTransform.cpp" "/home/cranesoar/SLAM/slambook2_whx/ch3/examples/build/CMakeFiles/coordinateTransform.dir/coordinateTransform.cpp.o"
+  "/home/cranesoar/SLAM/slambook2_whx/ch3/examples/plotTrajectory.cpp" "/home/cranesoar/SLAM/slambook2_whx/ch3/examples/build/CMakeFiles/plotTrajectory.dir/plotTrajectory.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -12,6 +12,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/include/eigen3"
   "/usr/local/lib/cmake/Pangolin/../../../include"
+  "/usr/local/include"
   )
 
 # Targets to which this target links.

@@ -1,3 +1,4 @@
 /home/cranesoar/SLAM/slambook2_whx/ch3/examples/build/CMakeFiles/rebuild_cache.dir
-/home/cranesoar/SLAM/slambook2_whx/ch3/examples/build/CMakeFiles/coordinateTransform.dir
 /home/cranesoar/SLAM/slambook2_whx/ch3/examples/build/CMakeFiles/edit_cache.dir
+/home/cranesoar/SLAM/slambook2_whx/ch3/examples/build/CMakeFiles/coordinateTransform.dir
+/home/cranesoar/SLAM/slambook2_whx/ch3/examples/build/CMakeFiles/plotTrajectory.dir

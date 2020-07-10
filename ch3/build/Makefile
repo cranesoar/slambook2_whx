@@ -48,17 +48,17 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cranesoar/SLAM/slambook2_whx/ch3/examples
+CMAKE_SOURCE_DIR = /home/cranesoar/SLAM/slambook2_whx/ch3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cranesoar/SLAM/slambook2_whx/ch3/examples/build
+CMAKE_BINARY_DIR = /home/cranesoar/SLAM/slambook2_whx/ch3/build
 
 #=============================================================================
 # Targets provided globally by CMake.
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	@echo "Running CMake to regenerate build system..."
 	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
@@ -69,7 +69,7 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	@echo "No interactive CMake dialog available..."
 	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cranesoar/SLAM/slambook2_whx/ch3/examples/build/CMakeFiles /home/cranesoar/SLAM/slambook2_whx/ch3/examples/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cranesoar/SLAM/slambook2_whx/ch3/build/CMakeFiles /home/cranesoar/SLAM/slambook2_whx/ch3/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cranesoar/SLAM/slambook2_whx/ch3/examples/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cranesoar/SLAM/slambook2_whx/ch3/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,6 +111,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named eigenMatrix
+
+# Build rule for target.
+eigenMatrix: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 eigenMatrix
+.PHONY : eigenMatrix
+
+# fast build rule for target.
+eigenMatrix/fast:
+	$(MAKE) -f useEigen/CMakeFiles/eigenMatrix.dir/build.make useEigen/CMakeFiles/eigenMatrix.dir/build
+.PHONY : eigenMatrix/fast
+
+#=============================================================================
+# Target rules for targets named eigenGeometry
+
+# Build rule for target.
+eigenGeometry: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 eigenGeometry
+.PHONY : eigenGeometry
+
+# fast build rule for target.
+eigenGeometry/fast:
+	$(MAKE) -f useGeometry/CMakeFiles/eigenGeometry.dir/build.make useGeometry/CMakeFiles/eigenGeometry.dir/build
+.PHONY : eigenGeometry/fast
+
+#=============================================================================
 # Target rules for targets named coordinateTransform
 
 # Build rule for target.
@@ -120,75 +146,8 @@ coordinateTransform: cmake_check_build_system
 
 # fast build rule for target.
 coordinateTransform/fast:
-	$(MAKE) -f CMakeFiles/coordinateTransform.dir/build.make CMakeFiles/coordinateTransform.dir/build
+	$(MAKE) -f examples/CMakeFiles/coordinateTransform.dir/build.make examples/CMakeFiles/coordinateTransform.dir/build
 .PHONY : coordinateTransform/fast
-
-#=============================================================================
-# Target rules for targets named plotTrajectory
-
-# Build rule for target.
-plotTrajectory: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 plotTrajectory
-.PHONY : plotTrajectory
-
-# fast build rule for target.
-plotTrajectory/fast:
-	$(MAKE) -f CMakeFiles/plotTrajectory.dir/build.make CMakeFiles/plotTrajectory.dir/build
-.PHONY : plotTrajectory/fast
-
-coordinateTransform.o: coordinateTransform.cpp.o
-
-.PHONY : coordinateTransform.o
-
-# target to build an object file
-coordinateTransform.cpp.o:
-	$(MAKE) -f CMakeFiles/coordinateTransform.dir/build.make CMakeFiles/coordinateTransform.dir/coordinateTransform.cpp.o
-.PHONY : coordinateTransform.cpp.o
-
-coordinateTransform.i: coordinateTransform.cpp.i
-
-.PHONY : coordinateTransform.i
-
-# target to preprocess a source file
-coordinateTransform.cpp.i:
-	$(MAKE) -f CMakeFiles/coordinateTransform.dir/build.make CMakeFiles/coordinateTransform.dir/coordinateTransform.cpp.i
-.PHONY : coordinateTransform.cpp.i
-
-coordinateTransform.s: coordinateTransform.cpp.s
-
-.PHONY : coordinateTransform.s
-
-# target to generate assembly for a file
-coordinateTransform.cpp.s:
-	$(MAKE) -f CMakeFiles/coordinateTransform.dir/build.make CMakeFiles/coordinateTransform.dir/coordinateTransform.cpp.s
-.PHONY : coordinateTransform.cpp.s
-
-plotTrajectory.o: plotTrajectory.cpp.o
-
-.PHONY : plotTrajectory.o
-
-# target to build an object file
-plotTrajectory.cpp.o:
-	$(MAKE) -f CMakeFiles/plotTrajectory.dir/build.make CMakeFiles/plotTrajectory.dir/plotTrajectory.cpp.o
-.PHONY : plotTrajectory.cpp.o
-
-plotTrajectory.i: plotTrajectory.cpp.i
-
-.PHONY : plotTrajectory.i
-
-# target to preprocess a source file
-plotTrajectory.cpp.i:
-	$(MAKE) -f CMakeFiles/plotTrajectory.dir/build.make CMakeFiles/plotTrajectory.dir/plotTrajectory.cpp.i
-.PHONY : plotTrajectory.cpp.i
-
-plotTrajectory.s: plotTrajectory.cpp.s
-
-.PHONY : plotTrajectory.s
-
-# target to generate assembly for a file
-plotTrajectory.cpp.s:
-	$(MAKE) -f CMakeFiles/plotTrajectory.dir/build.make CMakeFiles/plotTrajectory.dir/plotTrajectory.cpp.s
-.PHONY : plotTrajectory.cpp.s
 
 # Help Target
 help:
@@ -198,14 +157,9 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... eigenMatrix"
+	@echo "... eigenGeometry"
 	@echo "... coordinateTransform"
-	@echo "... plotTrajectory"
-	@echo "... coordinateTransform.o"
-	@echo "... coordinateTransform.i"
-	@echo "... coordinateTransform.s"
-	@echo "... plotTrajectory.o"
-	@echo "... plotTrajectory.i"
-	@echo "... plotTrajectory.s"
 .PHONY : help
 
 
