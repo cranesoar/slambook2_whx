@@ -46,3 +46,8 @@ add_executable(pose_estimation_3d3d pose_estimation_3d3d.cpp)
 target_link_libraries(pose_estimation_3d3d
         g2o_core g2o_stuff
         ${OpenCV_LIBS})
+
+add_executable(pose_estimation_3d3d_q7 pose_estimation_3d3d_q7.cpp)
+target_link_libraries(pose_estimation_3d3d_q7
+        g2o_core g2o_stuff g2o_types_sba
+        ${OpenCV_LIBS} ${Sophus_LIBRARIES})       

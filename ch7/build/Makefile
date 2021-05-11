@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named pose_estimation_3d3d_q7
+
+# Build rule for target.
+pose_estimation_3d3d_q7: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pose_estimation_3d3d_q7
+.PHONY : pose_estimation_3d3d_q7
+
+# fast build rule for target.
+pose_estimation_3d3d_q7/fast:
+	$(MAKE) -f CMakeFiles/pose_estimation_3d3d_q7.dir/build.make CMakeFiles/pose_estimation_3d3d_q7.dir/build
+.PHONY : pose_estimation_3d3d_q7/fast
+
+#=============================================================================
 # Target rules for targets named pose_estimation_3d3d
 
 # Build rule for target.
@@ -363,6 +376,33 @@ pose_estimation_3d3d.cpp.s:
 	$(MAKE) -f CMakeFiles/pose_estimation_3d3d.dir/build.make CMakeFiles/pose_estimation_3d3d.dir/pose_estimation_3d3d.cpp.s
 .PHONY : pose_estimation_3d3d.cpp.s
 
+pose_estimation_3d3d_q7.o: pose_estimation_3d3d_q7.cpp.o
+
+.PHONY : pose_estimation_3d3d_q7.o
+
+# target to build an object file
+pose_estimation_3d3d_q7.cpp.o:
+	$(MAKE) -f CMakeFiles/pose_estimation_3d3d_q7.dir/build.make CMakeFiles/pose_estimation_3d3d_q7.dir/pose_estimation_3d3d_q7.cpp.o
+.PHONY : pose_estimation_3d3d_q7.cpp.o
+
+pose_estimation_3d3d_q7.i: pose_estimation_3d3d_q7.cpp.i
+
+.PHONY : pose_estimation_3d3d_q7.i
+
+# target to preprocess a source file
+pose_estimation_3d3d_q7.cpp.i:
+	$(MAKE) -f CMakeFiles/pose_estimation_3d3d_q7.dir/build.make CMakeFiles/pose_estimation_3d3d_q7.dir/pose_estimation_3d3d_q7.cpp.i
+.PHONY : pose_estimation_3d3d_q7.cpp.i
+
+pose_estimation_3d3d_q7.s: pose_estimation_3d3d_q7.cpp.s
+
+.PHONY : pose_estimation_3d3d_q7.s
+
+# target to generate assembly for a file
+pose_estimation_3d3d_q7.cpp.s:
+	$(MAKE) -f CMakeFiles/pose_estimation_3d3d_q7.dir/build.make CMakeFiles/pose_estimation_3d3d_q7.dir/pose_estimation_3d3d_q7.cpp.s
+.PHONY : pose_estimation_3d3d_q7.cpp.s
+
 triangulation.o: triangulation.cpp.o
 
 .PHONY : triangulation.o
@@ -398,6 +438,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... pose_estimation_3d3d_q7"
 	@echo "... pose_estimation_3d3d"
 	@echo "... orb_self"
 	@echo "... triangulation"
@@ -423,6 +464,9 @@ help:
 	@echo "... pose_estimation_3d3d.o"
 	@echo "... pose_estimation_3d3d.i"
 	@echo "... pose_estimation_3d3d.s"
+	@echo "... pose_estimation_3d3d_q7.o"
+	@echo "... pose_estimation_3d3d_q7.i"
+	@echo "... pose_estimation_3d3d_q7.s"
 	@echo "... triangulation.o"
 	@echo "... triangulation.i"
 	@echo "... triangulation.s"

@@ -45,12 +45,12 @@ class VertexPose : public g2o::BaseVertex<6, Sophus::SE3d> {
 public:
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW;
 
-  virtual void setToOriginImpl() override {
-    _estimate = Sophus::SE3d();
+  virtual void setToOriginImpl() override {  //顶点的重置函数
+  _estimate = Sophus::SE3d();
   }
 
   /// left multiplication on SE3
-  virtual void oplusImpl(const double *update) override {
+  virtual void oplusImpl(const double *update) override {       //顶点的更新函数
     Eigen::Matrix<double, 6, 1> update_eigen;
     update_eigen << update[0], update[1], update[2], update[3], update[4], update[5];
     _estimate = Sophus::SE3d::exp(update_eigen) * _estimate;
@@ -66,14 +66,14 @@ class EdgeProjectXYZRGBDPoseOnly : public g2o::BaseUnaryEdge<3, Eigen::Vector3d,
 public:
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW;
 
-  EdgeProjectXYZRGBDPoseOnly(const Eigen::Vector3d &point) : _point(point) {}
+  EdgeProjectXYZRGBDPoseOnly(const Eigen::Vector3d &point) : _point(point) {}   
 
-  virtual void computeError() override {
+  virtual void computeError() override {            //边的误差计算   
     const VertexPose *pose = static_cast<const VertexPose *> ( _vertices[0] );
     _error = _measurement - pose->estimate() * _point;
   }
 
-  virtual void linearizeOplus() override {
+  virtual void linearizeOplus() override {         //边的雅克比计算
     VertexPose *pose = static_cast<VertexPose *>(_vertices[0]);
     Sophus::SE3d T = pose->estimate();
     Eigen::Vector3d xyz_trans = T * _point;
@@ -124,7 +124,7 @@ int main(int argc, char **argv) {
 
   cout << "3d-3d pairs: " << pts1.size() << endl;
   Mat R, t;
-  pose_estimation_3d3d(pts1, pts2, R, t);　　　　//SVD法求平移矩阵
+  pose_estimation_3d3d(pts1, pts2, R, t);      //SVD法求平移矩阵
   cout << "ICP via SVD results: " << endl;
   cout << "R = " << R << endl;
   cout << "t = " << t << endl;
@@ -252,7 +252,7 @@ void bundleAdjustment(
   const vector<Point3f> &pts2,
   Mat &R, Mat &t) {
   // 构建图优化，先设定g2o
-  typedef g2o::BlockSolverX BlockSolverType;
+  typedef g2o::BlockSolverX BlockSolverType;     //可变求解器
   typedef g2o::LinearSolverDense<BlockSolverType::PoseMatrixType> LinearSolverType; // 线性求解器类型
   // 梯度下降方法，可以从GN, LM, DogLeg 中选
   auto solver = new g2o::OptimizationAlgorithmLevenberg(
@@ -265,22 +265,22 @@ void bundleAdjustment(
   VertexPose *pose = new VertexPose(); // camera pose
   pose->setId(0);
   pose->setEstimate(Sophus::SE3d());
-  optimizer.addVertex(pose);
+  optimizer.addVertex(pose);         
 
   // edges
   for (size_t i = 0; i < pts1.size(); i++) {
-    EdgeProjectXYZRGBDPoseOnly *edge = new EdgeProjectXYZRGBDPoseOnly(
+    EdgeProjectXYZRGBDPoseOnly *edge = new EdgeProjectXYZRGBDPoseOnly(     //建立相机位姿一元边
       Eigen::Vector3d(pts2[i].x, pts2[i].y, pts2[i].z));
-    edge->setVertex(0, pose);
+    edge->setVertex(0, pose);      //设置连接的顶点
     edge->setMeasurement(Eigen::Vector3d(
-      pts1[i].x, pts1[i].y, pts1[i].z));
-    edge->setInformation(Eigen::Matrix3d::Identity());
+      pts1[i].x, pts1[i].y, pts1[i].z));    //观测数值
+    edge->setInformation(Eigen::Matrix3d::Identity());   //信息矩阵：协方差矩阵之逆
     optimizer.addEdge(edge);
   }
 
   chrono::steady_clock::time_point t1 = chrono::steady_clock::now();
   optimizer.initializeOptimization();
-  optimizer.optimize(10);
+  optimizer.optimize(10);      //设置迭代次数
   chrono::steady_clock::time_point t2 = chrono::steady_clock::now();
   chrono::duration<double> time_used = chrono::duration_cast<chrono::duration<double>>(t2 - t1);
   cout << "optimization costs time: " << time_used.count() << " seconds." << endl;
